@@ -1,0 +1,459 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --green-primary: #3d7a5f;
+  --green-light: #6aad8a;
+  --green-pale: #e8f5ee;
+  --green-dark: #2a5542;
+  --text-primary: #1a2e24;
+  --text-secondary: #4a6358;
+  --text-muted: #8aa898;
+  --white: #ffffff;
+  --border: #d4e8dc;
+}
+
+body {
+  font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-primary);
+  line-height: 1.6;
+  background: var(--white);
+}
+
+a {
+  color: var(--green-primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ───── Nav ───── */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+  padding: 0 2rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--green-primary);
+  letter-spacing: -0.3px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+}
+
+/* ───── Hero ───── */
+.hero {
+  padding: 120px 2rem 80px;
+  text-align: center;
+  background: linear-gradient(160deg, var(--green-pale) 0%, var(--white) 60%);
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: var(--green-pale);
+  border: 1px solid var(--border);
+  color: var(--green-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -1px;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.hero h1 span {
+  color: var(--green-primary);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 480px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+
+.cta-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--green-primary);
+  color: var(--white);
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.btn-primary:hover {
+  background: var(--green-dark);
+  text-decoration: none;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  color: var(--green-primary);
+  border: 1.5px solid var(--green-primary);
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.btn-secondary:hover {
+  background: var(--green-pale);
+  text-decoration: none;
+}
+
+.btn-coming-soon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #c8ddd4;
+  color: #6a9080;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: default;
+}
+
+/* ───── Features ───── */
+.features {
+  padding: 80px 2rem;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.section-label {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--green-light);
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+}
+
+.section-sub {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 3rem;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background: var(--green-pale);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(61, 122, 95, 0.12);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.feature-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* ───── Philosophy ───── */
+.philosophy {
+  background: var(--green-primary);
+  color: var(--white);
+  padding: 80px 2rem;
+  text-align: center;
+}
+
+.philosophy h2 {
+  font-size: clamp(1.4rem, 4vw, 1.9rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+
+.philosophy p {
+  font-size: 1rem;
+  opacity: 0.85;
+  max-width: 560px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.75;
+}
+
+.element-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.element-pill {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 30px;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* ───── Download ───── */
+.download {
+  padding: 80px 2rem;
+  text-align: center;
+  background: var(--green-pale);
+}
+
+.download h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.5px;
+}
+
+.download p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+/* ───── Footer ───── */
+footer {
+  background: var(--text-primary);
+  color: rgba(255,255,255,0.7);
+  padding: 3rem 2rem;
+}
+
+.footer-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 2rem;
+}
+
+.footer-brand p {
+  font-size: 0.8rem;
+  margin-top: 0.4rem;
+  opacity: 0.6;
+}
+
+.footer-brand strong {
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  font-size: 0.875rem;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.7);
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.footer-bottom {
+  font-size: 0.78rem;
+  opacity: 0.5;
+  line-height: 1.8;
+}
+
+/* ───── Legal pages ───── */
+.legal-page {
+  padding: 80px 2rem 60px;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.legal-page h1 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+}
+
+.legal-meta {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.legal-page h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 2rem 0 0.75rem;
+}
+
+.legal-page h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin: 1.25rem 0 0.5rem;
+}
+
+.legal-page p, .legal-page li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 0.5rem;
+}
+
+.legal-page ul, .legal-page ol {
+  padding-left: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.legal-page table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  margin: 1rem 0;
+}
+
+.legal-page th {
+  background: var(--green-pale);
+  color: var(--text-primary);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  border: 1px solid var(--border);
+}
+
+.legal-page td {
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  vertical-align: top;
+}
+
+.info-box {
+  background: var(--green-pale);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* ───── Responsive ───── */
+@media (max-width: 600px) {
+  nav {
+    padding: 0 1rem;
+  }
+  .nav-links {
+    display: none;
+  }
+  .hero {
+    padding: 100px 1.25rem 60px;
+  }
+  .features {
+    padding: 60px 1.25rem;
+  }
+  .footer-top {
+    flex-direction: column;
+  }
+  .legal-page {
+    padding: 80px 1.25rem 40px;
+  }
+}
