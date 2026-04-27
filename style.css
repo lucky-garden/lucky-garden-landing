@@ -143,6 +143,37 @@ nav {
   margin-bottom: 1rem;
 }
 
+.btn-store {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  text-decoration: none;
+}
+
+.btn-android {
+  background: var(--text-primary);
+  color: var(--white);
+  transition: background 0.15s;
+}
+.btn-android:hover {
+  background: #2a4035;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.btn-apple-soon {
+  background: rgba(0,0,0,0.08);
+  color: var(--text-muted);
+  cursor: default;
+  border: 1px solid var(--border);
+}
+
+/* legacy — kept for CTA section */
 .btn-coming-soon-hero {
   display: inline-flex;
   align-items: center;
@@ -252,6 +283,200 @@ nav {
 }
 .mock-nav-active {
   filter: drop-shadow(0 0 3px rgba(61,122,95,0.6));
+}
+
+/* 새 모크업 요소 */
+.mock-statusbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.6rem;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.mock-icons { letter-spacing: -1px; font-size: 0.55rem; }
+
+.mock-appbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.mock-hamburger { font-size: 0.9rem; color: var(--text-secondary); }
+.mock-appname {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--green-primary);
+}
+.mock-appname-dot { color: var(--teal); }
+
+.mock-greeting-wrap { margin-bottom: 8px; }
+.mock-user-name {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  margin-bottom: 1px;
+}
+.mock-user-msg {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.mock-checkin-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+.mock-card-title {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+.mock-card-sub {
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.mock-record-btn {
+  background: var(--teal);
+  color: var(--white);
+  border-radius: 8px;
+  padding: 6px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.mock-cards-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.mock-func-card {
+  border-radius: 12px;
+  padding: 10px;
+  min-height: 64px;
+}
+.mock-func-card.green { background: #3aab8a; }
+.mock-func-card.brown { background: #b07a5e; }
+.mock-func-tag {
+  font-size: 0.52rem;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+.mock-func-title {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--white);
+}
+.mock-func-sub {
+  font-size: 0.55rem;
+  color: rgba(255,255,255,0.7);
+}
+
+.mock-insight-wrap {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+.mock-insight-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.mock-insight-title {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+.mock-insight-badge {
+  font-size: 0.55rem;
+  color: var(--green-primary);
+  background: var(--green-pale);
+  border-radius: 6px;
+  padding: 2px 6px;
+}
+.mock-elem-bars { display: flex; flex-direction: column; gap: 4px; }
+.mock-elem-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.6rem;
+}
+.mock-elem-dot { font-size: 0.45rem; }
+.green-dot  { color: #5aaa7a; }
+.red-dot    { color: #e86c6c; }
+.yellow-dot { color: #d4a537; }
+.blue-dot   { color: #8ba8c8; }
+.navy-dot   { color: #4a7fa5; }
+.mock-elem-name {
+  width: 28px;
+  font-size: 0.58rem;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+.mock-bar-bg {
+  flex: 1;
+  height: 5px;
+  background: #eee;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.mock-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+}
+.mock-elem-pct {
+  width: 22px;
+  text-align: right;
+  font-size: 0.58rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+.mock-insight-sub {
+  font-size: 0.58rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+.mock-chat-input {
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 6px 8px 6px 12px;
+  gap: 6px;
+}
+.mock-input-placeholder {
+  flex: 1;
+  font-size: 0.58rem;
+  color: var(--text-muted);
+}
+.mock-send-btn {
+  width: 22px;
+  height: 22px;
+  background: var(--teal);
+  color: var(--white);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  flex-shrink: 0;
 }
 
 /* ───── Trust bar ───── */
@@ -522,40 +747,45 @@ nav {
   color: rgba(255,255,255,0.6);
 }
 
-/* ───── Testimonials ───── */
-.testimonials {
+/* ───── Signup methods ───── */
+.signup-section {
   padding: 100px 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
-.testimonial-card {
   background: var(--bg-soft);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 2rem;
 }
 
-.t-text {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  line-height: 1.8;
-  margin-bottom: 1.25rem;
-  font-style: italic;
+.signup-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
 }
-.t-text::before { content: '"'; }
-.t-text::after  { content: '"'; }
 
-.t-name {
-  font-size: 0.78rem;
-  color: var(--text-muted);
+.signup-methods {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.signup-method {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
   font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.signup-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 
 /* ───── FAQ ───── */
@@ -832,10 +1062,8 @@ footer {
     margin: 0;
   }
 
-  .testimonial-grid {
-    grid-template-columns: 1fr;
-    max-width: 480px;
-    margin: 0 auto;
+  .signup-methods {
+    gap: 1.25rem;
   }
 
   .feature-row,
@@ -874,7 +1102,7 @@ footer {
 
   .hero { padding: 90px 1.25rem 0; }
   .features,
-  .testimonials { padding: 70px 1.25rem; }
+  .signup-section { padding: 70px 1.25rem; }
   .how,
   .faq,
   .download,
