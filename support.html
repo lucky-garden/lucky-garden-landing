@@ -7,92 +7,129 @@
   <meta name="description" content="운의 정원 앱 고객 지원 센터. 자주 묻는 질문, 계정 관리, 구독 취소 등 도움이 필요하신가요?" />
   <link rel="stylesheet" href="style.css" />
   <style>
+    /* ── Support Hero ── */
     .support-hero {
-      background: linear-gradient(160deg, #f0faf5 0%, #ffffff 60%);
-      padding: 100px 2rem 60px;
+      background: linear-gradient(160deg, #f0faf5 0%, var(--white) 55%);
+      padding: 120px 2rem 72px;
       text-align: center;
-      border-bottom: 1px solid var(--border);
     }
-    .support-hero-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+    .support-hero-logo {
+      width: 72px;
+      height: 72px;
+      margin-bottom: 1.5rem;
     }
-    .support-hero h1 {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      font-weight: 800;
-      color: var(--text-primary);
-      letter-spacing: -0.8px;
+    .support-hero-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--teal);
       margin-bottom: 0.75rem;
     }
-    .support-hero p {
+    .support-hero h1 {
+      font-size: clamp(2rem, 4.5vw, 2.8rem);
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -1px;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .support-hero-desc {
       font-size: 1rem;
       color: var(--text-secondary);
-      line-height: 1.7;
-      max-width: 520px;
-      margin: 0 auto 2rem;
+      line-height: 1.75;
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
     }
     .contact-card {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1rem 1.75rem;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      border-radius: 18px;
+      padding: 1.1rem 2rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      text-decoration: none;
+      transition: box-shadow 0.18s, transform 0.18s;
+    }
+    .contact-card:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.11);
+      transform: translateY(-2px);
+      text-decoration: none;
     }
     .contact-card-icon {
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       background: var(--green-pale);
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       flex-shrink: 0;
     }
-    .contact-card-text {
-      text-align: left;
-    }
+    .contact-card-text { text-align: left; }
     .contact-card-label {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       color: var(--text-muted);
       font-weight: 600;
-      margin-bottom: 2px;
+      letter-spacing: 0.3px;
+      margin-bottom: 3px;
     }
     .contact-card-value {
       font-size: 0.95rem;
       font-weight: 700;
       color: var(--green-primary);
     }
+    .response-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 1.25rem;
+      background: var(--green-pale);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--green-primary);
+    }
 
+    /* ── Trust bar (재사용) ── */
+
+    /* ── Support body ── */
     .support-body {
       max-width: 780px;
       margin: 0 auto;
-      padding: 60px 2rem 80px;
+      padding: 72px 2rem 80px;
     }
 
-    .support-section {
-      margin-bottom: 3rem;
+    .support-section { margin-bottom: 3.5rem; }
+
+    .support-section-header {
+      margin-bottom: 1.25rem;
+    }
+    .support-section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--teal);
+      margin-bottom: 0.4rem;
     }
     .support-section-title {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       font-weight: 800;
       color: var(--text-primary);
       letter-spacing: -0.4px;
-      margin-bottom: 1.25rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 2px solid var(--green-pale);
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
 
+    /* ── FAQ accordion ── */
     .faq-list {
       display: flex;
       flex-direction: column;
-      gap: 0.6rem;
+      gap: 0.5rem;
     }
     .faq-item {
       background: var(--white);
@@ -101,7 +138,7 @@
       overflow: hidden;
     }
     .faq-item summary {
-      padding: 1rem 1.25rem;
+      padding: 1.05rem 1.25rem;
       font-size: 0.9rem;
       font-weight: 700;
       color: var(--text-primary);
@@ -110,8 +147,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      user-select: none;
       gap: 1rem;
+      user-select: none;
     }
     .faq-item summary::-webkit-details-marker { display: none; }
     .faq-item summary::after {
@@ -121,70 +158,91 @@
       transition: transform 0.2s;
       flex-shrink: 0;
     }
-    .faq-item[open] summary::after {
-      transform: rotate(45deg);
-    }
-    .faq-item p {
-      padding: 0 1.25rem 1rem;
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      line-height: 1.75;
-      border-top: 1px solid var(--border);
-      padding-top: 1rem;
-      margin: 0;
-    }
-    .faq-item ol, .faq-item ul {
-      padding: 0 1.25rem 1rem;
-      border-top: 1px solid var(--border);
-      padding-top: 1rem;
-      margin: 0;
-      padding-left: 2.75rem;
-    }
-    .faq-item li {
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      line-height: 1.75;
-      margin-bottom: 0.3rem;
-    }
-    .faq-item .step-list {
-      padding: 1rem 1.25rem 1rem 2.75rem;
-      border-top: 1px solid var(--border);
-      margin: 0;
-    }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
 
-    .info-box {
-      background: var(--green-pale);
-      border: 1px solid var(--border);
-      border-radius: 12px;
+    .faq-item .faq-body {
       padding: 1rem 1.25rem;
-      margin-top: 0.75rem;
+      border-top: 1px solid var(--border);
+    }
+    .faq-item .faq-body p {
       font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin: 0 0 0.6rem;
+    }
+    .faq-item .faq-body p:last-child { margin-bottom: 0; }
+    .faq-item .faq-body ol,
+    .faq-item .faq-body ul {
+      padding-left: 1.5rem;
+      margin-bottom: 0.6rem;
+    }
+    .faq-item .faq-body li {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 0.25rem;
+    }
+
+    .note-box {
+      background: var(--green-pale);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.875rem 1.1rem;
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
       color: var(--text-secondary);
       line-height: 1.75;
     }
-    .info-box strong {
-      color: var(--green-dark);
-    }
+    .note-box strong { color: var(--green-dark); }
 
-    .response-time-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--green-pale);
-      border: 1px solid var(--border);
+    /* ── Bottom CTA ── */
+    .support-cta {
+      background: linear-gradient(160deg, var(--green-pale) 0%, #f0fdf7 100%);
       border-radius: 20px;
-      padding: 4px 12px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--green-primary);
-      margin-top: 0.75rem;
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .support-cta img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 1rem;
+    }
+    .support-cta h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.4px;
+      margin-bottom: 0.5rem;
+    }
+    .support-cta p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+    .support-cta a {
+      display: inline-block;
+      background: var(--green-primary);
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 12px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .support-cta a:hover {
+      background: var(--green-dark);
+      text-decoration: none;
     }
 
     @media (max-width: 600px) {
-      .support-hero { padding: 90px 1.25rem 50px; }
-      .support-body { padding: 40px 1.25rem 60px; }
-      .contact-card { flex-direction: column; text-align: center; }
+      .support-hero { padding: 96px 1.25rem 60px; }
+      .support-body  { padding: 48px 1.25rem 60px; }
+      .contact-card  { flex-direction: column; text-align: center; padding: 1.25rem 1.5rem; }
       .contact-card-text { text-align: center; }
+      .support-cta { padding: 2rem 1.25rem; border-radius: 14px; }
     }
   </style>
 </head>
@@ -204,13 +262,14 @@
     <button class="nav-mobile-menu" aria-label="메뉴">☰</button>
   </nav>
 
-  <!-- Support Hero -->
-  <div class="support-hero">
-    <div class="support-hero-icon">🌿</div>
-    <h1>무엇을 도와드릴까요?</h1>
-    <p>
-      운의 정원 사용 중 궁금한 점이나 문제가 있으신가요?<br />
-      아래 자주 묻는 질문을 확인하시거나, 이메일로 문의해 주세요.
+  <!-- Hero -->
+  <section class="support-hero">
+    <img src="logo.svg" alt="운의 정원" class="support-hero-logo" />
+    <p class="support-hero-eyebrow">고객 지원</p>
+    <h1>무엇을<br />도와드릴까요?</h1>
+    <p class="support-hero-desc">
+      운의 정원 사용 중 궁금한 점이 있으신가요?<br />
+      자주 묻는 질문을 확인하시거나 이메일로 문의해 주세요.
     </p>
     <a href="mailto:bettyhong1004@gmail.com" class="contact-card">
       <div class="contact-card-icon">✉️</div>
@@ -220,78 +279,120 @@
       </div>
     </a>
     <br />
-    <div class="response-time-badge">⏱ 평균 응답 시간: 영업일 기준 1~2일</div>
+    <div class="response-badge">⏱ 영업일 기준 1~2일 내 답변</div>
+  </section>
+
+  <!-- Trust bar -->
+  <div class="trust-bar">
+    <div class="trust-inner">
+      <span>🔒 개인정보 안전 보호</span>
+      <span class="trust-divider">·</span>
+      <span>🤖 AI 대화 내용 학습 미사용</span>
+      <span class="trust-divider">·</span>
+      <span>📵 광고 없음</span>
+      <span class="trust-divider">·</span>
+      <span>🇰🇷 한국어 전용 서비스</span>
+    </div>
   </div>
 
-  <!-- Support Body -->
+  <!-- Body -->
   <div class="support-body">
 
-    <!-- 계정 -->
+    <!-- 계정 관리 -->
     <div class="support-section">
-      <h2 class="support-section-title">👤 계정 관리</h2>
+      <div class="support-section-header">
+        <p class="support-section-label">계정 관리</p>
+        <h2 class="support-section-title">계정 및 로그인</h2>
+      </div>
       <div class="faq-list">
 
         <details class="faq-item">
           <summary>어떤 방법으로 가입할 수 있나요?</summary>
-          <p>이메일, Apple 계정, 카카오톡, 네이버 계정으로 가입하실 수 있습니다. 별도 양식 없이 기존에 사용 중인 계정으로 30초 안에 시작하실 수 있어요.</p>
+          <div class="faq-body">
+            <p>이메일, Apple 계정, 카카오톡, 네이버 계정으로 가입하실 수 있습니다. 별도 양식 없이 기존에 사용 중인 계정으로 30초 안에 시작하실 수 있어요.</p>
+          </div>
         </details>
 
         <details class="faq-item">
           <summary>비밀번호를 잊어버렸어요.</summary>
-          <p>Apple, 카카오, 네이버 소셜 로그인으로 가입하셨다면 각 서비스의 계정 설정에서 비밀번호를 관리하실 수 있습니다. 이메일로 가입하셨고 비밀번호가 기억나지 않는 경우 <a href="mailto:bettyhong1004@gmail.com">bettyhong1004@gmail.com</a>으로 문의해 주세요.</p>
+          <div class="faq-body">
+            <p>Apple, 카카오, 네이버 소셜 로그인으로 가입하셨다면 각 서비스의 계정 설정에서 비밀번호를 관리하실 수 있습니다. 이메일로 가입하셨고 비밀번호가 기억나지 않는 경우 <a href="mailto:bettyhong1004@gmail.com">bettyhong1004@gmail.com</a>으로 문의해 주세요.</p>
+          </div>
         </details>
 
         <details class="faq-item">
-          <summary>계정(회원 탈퇴)을 삭제하고 싶어요.</summary>
-          <ol class="step-list">
-            <li>앱 하단 메뉴에서 <strong>마이페이지</strong>로 이동합니다.</li>
-            <li><strong>설정</strong> 아이콘을 탭합니다.</li>
-            <li><strong>계정 관리 → 회원 탈퇴</strong>를 선택합니다.</li>
-            <li>탈퇴 사유를 선택하고 <strong>탈퇴하기</strong>를 누르면 즉시 처리됩니다.</li>
-          </ol>
-          <div class="info-box">
-            <strong>⚠ 주의:</strong> 탈퇴 즉시 모든 대화 기록, 일기, 체크인 데이터가 영구 삭제됩니다. 삭제된 데이터는 복구할 수 없습니다.
+          <summary>로그인이 되지 않아요.</summary>
+          <div class="faq-body">
+            <p>소셜 로그인(Apple, 카카오, 네이버) 오류의 경우 해당 서비스의 앱이 기기에 설치되어 있는지 확인해 주세요. 문제가 지속되면 <a href="mailto:bettyhong1004@gmail.com">bettyhong1004@gmail.com</a>으로 문의해 주세요.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>계정을 삭제하고 싶어요.</summary>
+          <div class="faq-body">
+            <ol>
+              <li>앱 하단 메뉴에서 <strong>마이페이지</strong>로 이동합니다.</li>
+              <li><strong>설정</strong> 아이콘을 탭합니다.</li>
+              <li><strong>계정 관리 → 회원 탈퇴</strong>를 선택합니다.</li>
+              <li>탈퇴 사유를 선택하고 <strong>탈퇴하기</strong>를 누르면 즉시 처리됩니다.</li>
+            </ol>
+            <div class="note-box">
+              <strong>⚠ 주의:</strong> 탈퇴 즉시 모든 대화 기록, 일기, 체크인 데이터가 영구 삭제됩니다. 삭제된 데이터는 복구할 수 없습니다.
+            </div>
           </div>
         </details>
 
         <details class="faq-item">
           <summary>이메일 주소를 변경하고 싶어요.</summary>
-          <p>현재 앱 내에서 이메일 변경 기능을 지원하지 않습니다. 변경이 필요하신 경우 <a href="mailto:bettyhong1004@gmail.com">bettyhong1004@gmail.com</a>으로 문의해 주세요.</p>
+          <div class="faq-body">
+            <p>현재 앱 내 이메일 변경 기능을 지원하지 않습니다. 변경이 필요하신 경우 <a href="mailto:bettyhong1004@gmail.com">bettyhong1004@gmail.com</a>으로 문의해 주세요.</p>
+          </div>
         </details>
 
       </div>
     </div>
 
-    <!-- 구독 -->
+    <!-- 구독 및 결제 -->
     <div class="support-section">
-      <h2 class="support-section-title">💳 구독 및 결제</h2>
+      <div class="support-section-header">
+        <p class="support-section-label">구독 및 결제</p>
+        <h2 class="support-section-title">요금제 및 결제 문의</h2>
+      </div>
       <div class="faq-list">
 
         <details class="faq-item">
           <summary>무료로 사용할 수 있나요?</summary>
-          <p>기본 기능은 무료로 이용하실 수 있습니다. AI 대화 횟수 등 일부 기능은 일일 제한이 있으며, 구독 플랜으로 무제한 이용이 가능합니다.</p>
+          <div class="faq-body">
+            <p>기본 기능은 무료로 이용하실 수 있습니다. AI 대화 횟수 등 일부 기능은 일일 제한이 있으며, 구독 플랜으로 무제한 이용이 가능합니다.</p>
+          </div>
         </details>
 
         <details class="faq-item">
           <summary>구독을 취소하려면 어떻게 하나요?</summary>
-          <p>구독은 각 앱 마켓에서 직접 취소하실 수 있습니다.</p>
-          <ul class="step-list" style="list-style: disc;">
-            <li><strong>Android (Google Play):</strong> Google Play 앱 → 프로필 → 결제 및 구독 → 구독 → 운의 정원 → 구독 취소</li>
-            <li><strong>iOS (App Store):</strong> 설정 앱 → Apple ID → 구독 → 운의 정원 → 구독 취소</li>
-          </ul>
-          <div class="info-box">
-            취소는 다음 결제일 <strong>24시간 전</strong>까지 완료해야 합니다. 취소 후에도 현재 구독 기간이 끝날 때까지 유료 기능을 이용하실 수 있습니다.
+          <div class="faq-body">
+            <p>구독은 각 앱 마켓에서 직접 취소하실 수 있습니다.</p>
+            <ul>
+              <li><strong>Android (Google Play):</strong> Google Play 앱 → 프로필 → 결제 및 구독 → 구독 → 운의 정원 → 구독 취소</li>
+              <li><strong>iOS (App Store):</strong> 설정 앱 → Apple ID → 구독 → 운의 정원 → 구독 취소</li>
+            </ul>
+            <div class="note-box">
+              취소는 다음 결제일 <strong>24시간 전</strong>까지 완료해야 합니다. 취소 후에도 현재 구독 기간이 끝날 때까지 유료 기능을 이용하실 수 있습니다.
+            </div>
           </div>
         </details>
 
         <details class="faq-item">
           <summary>결제가 이중으로 청구된 것 같아요.</summary>
-          <p>결제는 Google Play 또는 App Store를 통해 처리됩니다. 중복 결제가 의심되는 경우 각 마켓의 고객센터에 직접 환불을 요청하시거나, <a href="mailto:bettyhong1004@gmail.com">bettyhong1004@gmail.com</a>으로 결제 내역을 첨부하여 문의해 주세요.</p>
+          <div class="faq-body">
+            <p>결제는 Google Play 또는 App Store를 통해 처리됩니다. 중복 결제가 의심되는 경우 각 마켓의 고객센터에 직접 환불을 요청하시거나, <a href="mailto:bettyhong1004@gmail.com">bettyhong1004@gmail.com</a>으로 결제 내역을 첨부해 문의해 주세요.</p>
+          </div>
         </details>
 
         <details class="faq-item">
           <summary>구독을 취소했는데 요금이 청구됐어요.</summary>
-          <p>취소 처리 시점과 결제 주기에 따라 이미 다음 결제가 진행됐을 수 있습니다. 취소는 다음 결제일 24시간 전까지 완료해야 적용됩니다. 문의가 필요하신 경우 결제 내역과 함께 <a href="mailto:bettyhong1004@gmail.com">bettyhong1004@gmail.com</a>으로 연락해 주세요.</p>
+          <div class="faq-body">
+            <p>취소 처리 시점과 결제 주기에 따라 이미 다음 결제가 진행됐을 수 있습니다. 취소는 다음 결제일 24시간 전까지 완료해야 적용됩니다. 결제 내역과 함께 <a href="mailto:bettyhong1004@gmail.com">bettyhong1004@gmail.com</a>으로 연락해 주시면 도움드리겠습니다.</p>
+          </div>
         </details>
 
       </div>
@@ -299,22 +400,31 @@
 
     <!-- 개인정보 및 데이터 -->
     <div class="support-section">
-      <h2 class="support-section-title">🔒 개인정보 및 데이터</h2>
+      <div class="support-section-header">
+        <p class="support-section-label">개인정보 및 데이터</p>
+        <h2 class="support-section-title">데이터 보호 및 관리</h2>
+      </div>
       <div class="faq-list">
 
         <details class="faq-item">
           <summary>AI와의 대화 내용이 다른 곳에 쓰이나요?</summary>
-          <p>대화 내용은 서비스 제공 목적으로만 사용되며, AI 모델 학습에 사용되지 않습니다. 자세한 내용은 <a href="privacy.html">개인정보처리방침</a>을 확인해 주세요.</p>
+          <div class="faq-body">
+            <p>대화 내용은 서비스 제공 목적으로만 사용되며, AI 모델 학습에 사용되지 않습니다. 자세한 내용은 <a href="privacy.html">개인정보처리방침</a>을 확인해 주세요.</p>
+          </div>
         </details>
 
         <details class="faq-item">
           <summary>내 데이터를 내보내거나 다운로드할 수 있나요?</summary>
-          <p>현재 앱 내 데이터 내보내기 기능은 준비 중입니다. 필요하신 경우 <a href="mailto:bettyhong1004@gmail.com">bettyhong1004@gmail.com</a>으로 문의해 주시면 개별 안내드리겠습니다.</p>
+          <div class="faq-body">
+            <p>현재 앱 내 데이터 내보내기 기능은 준비 중입니다. 필요하신 경우 <a href="mailto:bettyhong1004@gmail.com">bettyhong1004@gmail.com</a>으로 문의해 주시면 개별 안내드리겠습니다.</p>
+          </div>
         </details>
 
         <details class="faq-item">
           <summary>탈퇴하면 데이터가 완전히 삭제되나요?</summary>
-          <p>회원 탈퇴 시 모든 개인 데이터(대화 기록, 일기, 체크인, 인사이트 등)는 즉시 삭제됩니다. 단, 관련 법령에 따라 일부 기록은 법적 보존 기간 동안 보관될 수 있습니다. 자세한 내용은 <a href="privacy.html">개인정보처리방침</a>을 참고해 주세요.</p>
+          <div class="faq-body">
+            <p>회원 탈퇴 시 모든 개인 데이터(대화 기록, 일기, 체크인, 인사이트 등)는 즉시 삭제됩니다. 단, 관련 법령에 따라 일부 기록은 법적 보존 기간 동안 보관될 수 있습니다. 자세한 내용은 <a href="privacy.html">개인정보처리방침</a>을 참고해 주세요.</p>
+          </div>
         </details>
 
       </div>
@@ -322,41 +432,45 @@
 
     <!-- 기술 지원 -->
     <div class="support-section">
-      <h2 class="support-section-title">🛠 기술 지원</h2>
+      <div class="support-section-header">
+        <p class="support-section-label">기술 지원</p>
+        <h2 class="support-section-title">앱 오류 및 문제 해결</h2>
+      </div>
       <div class="faq-list">
 
         <details class="faq-item">
           <summary>앱이 갑자기 종료되거나 오류가 발생해요.</summary>
-          <ol class="step-list">
-            <li>앱을 완전히 종료한 후 다시 실행해 보세요.</li>
-            <li>기기를 재시작해 보세요.</li>
-            <li>앱을 최신 버전으로 업데이트해 보세요.</li>
-            <li>앱을 삭제 후 재설치해 보세요. (로그인 정보와 데이터는 계정에 저장되어 있습니다.)</li>
-          </ol>
-          <p>위 방법으로 해결되지 않으면 <a href="mailto:bettyhong1004@gmail.com">bettyhong1004@gmail.com</a>으로 기기 모델, OS 버전, 오류 화면을 첨부하여 문의해 주세요.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>로그인이 되지 않아요.</summary>
-          <p>소셜 로그인(Apple, 카카오, 네이버) 오류의 경우 해당 서비스의 앱이 설치되어 있는지 확인해 주세요. 이메일 로그인 오류는 "비밀번호 찾기"로 재설정해 보세요. 문제가 지속되면 <a href="mailto:bettyhong1004@gmail.com">bettyhong1004@gmail.com</a>으로 문의해 주세요.</p>
+          <div class="faq-body">
+            <ol>
+              <li>앱을 완전히 종료한 후 다시 실행해 보세요.</li>
+              <li>기기를 재시작해 보세요.</li>
+              <li>앱을 최신 버전으로 업데이트해 보세요.</li>
+              <li>앱을 삭제 후 재설치해 보세요. (로그인 정보와 데이터는 계정에 저장되어 있습니다.)</li>
+            </ol>
+            <p>위 방법으로 해결되지 않으면 <a href="mailto:bettyhong1004@gmail.com">bettyhong1004@gmail.com</a>으로 기기 모델, OS 버전, 오류 화면을 첨부하여 문의해 주세요.</p>
+          </div>
         </details>
 
         <details class="faq-item">
           <summary>알림이 오지 않아요.</summary>
-          <ol class="step-list">
-            <li>기기의 <strong>설정 → 알림</strong>에서 운의 정원의 알림 권한이 허용되어 있는지 확인해 주세요.</li>
-            <li>앱 내 <strong>설정 → 알림 설정</strong>에서 원하는 알림이 켜져 있는지 확인해 주세요.</li>
-            <li>방해 금지 모드가 활성화되어 있지 않은지 확인해 주세요.</li>
-          </ol>
+          <div class="faq-body">
+            <ol>
+              <li>기기의 <strong>설정 → 알림</strong>에서 운의 정원의 알림 권한이 허용되어 있는지 확인해 주세요.</li>
+              <li>앱 내 <strong>설정 → 알림 설정</strong>에서 원하는 알림이 켜져 있는지 확인해 주세요.</li>
+              <li>방해 금지 모드가 활성화되어 있지 않은지 확인해 주세요.</li>
+            </ol>
+          </div>
         </details>
 
         <details class="faq-item">
           <summary>지원하는 기기 및 OS 버전은 무엇인가요?</summary>
-          <ul class="step-list" style="list-style: disc;">
-            <li><strong>Android:</strong> Android 8.0 (Oreo) 이상</li>
-            <li><strong>iOS:</strong> iOS 15.0 이상 (App Store 출시 예정)</li>
-          </ul>
-          <p>최상의 경험을 위해 항상 최신 버전의 OS와 앱을 사용하시길 권장합니다.</p>
+          <div class="faq-body">
+            <ul>
+              <li><strong>Android:</strong> Android 8.0 (Oreo) 이상</li>
+              <li><strong>iOS:</strong> iOS 15.0 이상 (App Store 출시 예정)</li>
+            </ul>
+            <p>최상의 경험을 위해 항상 최신 버전의 OS와 앱을 사용하시길 권장합니다.</p>
+          </div>
         </details>
 
       </div>
@@ -364,35 +478,45 @@
 
     <!-- 기타 -->
     <div class="support-section">
-      <h2 class="support-section-title">💬 기타 문의</h2>
+      <div class="support-section-header">
+        <p class="support-section-label">기타</p>
+        <h2 class="support-section-title">그 외 문의</h2>
+      </div>
       <div class="faq-list">
 
         <details class="faq-item">
-          <summary>앱 사용 중 불쾌하거나 부적절한 콘텐츠를 경험했어요.</summary>
-          <p>불편을 드려 죄송합니다. 구체적인 내용을 <a href="mailto:bettyhong1004@gmail.com">bettyhong1004@gmail.com</a>으로 보내주시면 신속하게 검토하겠습니다.</p>
+          <summary>AI가 전문 상담사나 의료 서비스를 대체할 수 있나요?</summary>
+          <div class="faq-body">
+            <p>운의 정원의 AI는 심리 상담이나 의료 진단을 대체하지 않습니다. 전문적인 도움이 필요한 경우 반드시 전문가와 상담하시기 바랍니다.</p>
+            <div class="note-box">
+              긴급 위기 상황 시 — <strong>자살예방상담전화 1393</strong> (24시간) · <strong>정신건강위기상담전화 1577-0199</strong> (24시간)
+            </div>
+          </div>
         </details>
 
         <details class="faq-item">
-          <summary>AI가 전문 상담사나 의료 서비스를 대체할 수 있나요?</summary>
-          <p>운의 정원의 AI는 심리 상담이나 의료 진단을 대체하지 않습니다. 위기 상황이나 전문적인 도움이 필요한 경우 반드시 전문가와 상담하시기 바랍니다.</p>
-          <div class="info-box">
-            긴급 위기 상황 시: <strong>자살예방상담전화 1393</strong> (24시간) · <strong>정신건강위기상담전화 1577-0199</strong> (24시간)
+          <summary>앱 사용 중 불쾌하거나 부적절한 콘텐츠를 경험했어요.</summary>
+          <div class="faq-body">
+            <p>불편을 드려 죄송합니다. 구체적인 내용을 <a href="mailto:bettyhong1004@gmail.com">bettyhong1004@gmail.com</a>으로 보내주시면 신속하게 검토하겠습니다.</p>
           </div>
         </details>
 
         <details class="faq-item">
           <summary>서비스 개선 의견이나 기능 제안이 있어요.</summary>
-          <p>소중한 의견 감사합니다. <a href="mailto:bettyhong1004@gmail.com">bettyhong1004@gmail.com</a>으로 자유롭게 보내주세요. 더 나은 서비스를 만드는 데 큰 도움이 됩니다.</p>
+          <div class="faq-body">
+            <p>소중한 의견 감사합니다. <a href="mailto:bettyhong1004@gmail.com">bettyhong1004@gmail.com</a>으로 자유롭게 보내주세요. 더 나은 서비스를 만드는 데 큰 도움이 됩니다.</p>
+          </div>
         </details>
 
       </div>
     </div>
 
-    <!-- 직접 문의 -->
-    <div class="info-box" style="text-align:center; padding: 1.5rem 1.25rem;">
-      <p style="font-size:0.95rem; font-weight:700; color:var(--text-primary); margin-bottom:0.4rem;">찾으시는 답변이 없으신가요?</p>
-      <p style="margin-bottom:0.75rem;">이메일로 직접 문의해 주시면 성심껏 도와드리겠습니다.</p>
-      <a href="mailto:bettyhong1004@gmail.com" style="font-weight:700; color:var(--green-primary); font-size:0.95rem;">bettyhong1004@gmail.com</a>
+    <!-- Bottom CTA -->
+    <div class="support-cta">
+      <img src="logo.svg" alt="운의 정원" />
+      <h3>찾으시는 답변이 없으신가요?</h3>
+      <p>이메일로 직접 문의해 주시면 성심껏 도와드리겠습니다.</p>
+      <a href="mailto:bettyhong1004@gmail.com">이메일로 문의하기</a>
     </div>
 
   </div>
