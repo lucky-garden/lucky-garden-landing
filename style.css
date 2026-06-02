@@ -166,6 +166,17 @@ nav {
   color: var(--white);
 }
 
+.btn-apple {
+  background: #000;
+  color: var(--white);
+  transition: background 0.15s;
+}
+.btn-apple:hover {
+  background: #1d1d1f;
+  text-decoration: none;
+  color: var(--white);
+}
+
 .btn-apple-soon {
   background: rgba(0,0,0,0.08);
   color: var(--text-muted);
