@@ -1111,6 +1111,28 @@ footer {
   .nav-links { display: none; }
   .nav-mobile-menu { display: block; }
 
+  .nav-links.nav-open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    gap: 0;
+    background: rgba(255,255,255,0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    padding: 0.25rem 1.25rem 0.75rem;
+    font-size: 0.95rem;
+  }
+  .nav-links.nav-open li {
+    padding: 0.85rem 0.25rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-links.nav-open li:last-child { border-bottom: none; }
+  .nav-links.nav-open a { display: block; }
+
   .hero { padding: 90px 1.25rem 0; }
   .features,
   .signup-section { padding: 70px 1.25rem; }
